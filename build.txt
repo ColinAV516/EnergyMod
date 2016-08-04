@@ -1,0 +1,9 @@
+author = ColinAV
+version = 0.3
+displayName = Essence Mod
+homepage = http://forums.terraria.org/index.php?threads/energy-mod.39213/
+hideCode = false
+hideResources = false
+includeSource = false
+buildIgnore = *.csproj, *.user, obj\*, bin\*, .vs\*
+includePDB = false
