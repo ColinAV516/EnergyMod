@@ -21,7 +21,6 @@ namespace EnergyMod.NPCs.Day
 			npc.value = 60f;
 			npc.knockBackResist = 1f;
 			npc.aiStyle = 1;
-			npc.npcSlots = 0.25f;
 			Main.npcFrameCount[npc.type] = Main.npcFrameCount[NPCID.BlueSlime];
 			aiType = NPCID.BlueSlime;
 			animationType = NPCID.BlueSlime;
@@ -34,7 +33,7 @@ namespace EnergyMod.NPCs.Day
 		
 					public override void NPCLoot()
 	{
-			int amountToDrop = Main.rand.Next(1,5);
+			int amountToDrop = Main.rand.Next(5,20);
 			Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.GoldCoin, amountToDrop);
 	}
 	

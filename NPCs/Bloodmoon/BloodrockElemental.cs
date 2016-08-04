@@ -21,7 +21,6 @@ namespace EnergyMod.NPCs.Bloodmoon
 			npc.value = 60f;
 			npc.knockBackResist = 1f;
 			npc.aiStyle = 91;
-			npc.npcSlots = 0.25f;
 			Main.npcFrameCount[npc.type] = Main.npcFrameCount[483];
 			aiType = 483;
 			animationType = 483;

@@ -21,9 +21,7 @@ namespace EnergyMod.NPCs.Jungle
 			npc.value = 60f;
 			npc.knockBackResist = 0.5f;
 			npc.aiStyle = 3;
-			npc.npcSlots = 0.25f;
 			Main.npcFrameCount[npc.type] = Main.npcFrameCount[NPCID.SwampThing];
-			aiType = NPCID.SwampThing;
 			animationType = NPCID.SwampThing;
 		}
 
@@ -39,7 +37,8 @@ namespace EnergyMod.NPCs.Jungle
 	{
         if (Main.rand.Next(60) == 0)
         {
-            Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("Mudball"));
+			int amountToDrop = Main.rand.Next(20,40);
+            Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("Mudball"), amountToDrop);
         }
 	}
 	

@@ -21,7 +21,6 @@ namespace EnergyMod.NPCs.Night
 			npc.value = 60f;
 			npc.knockBackResist = 0.5f;
 			npc.aiStyle = 3;
-			npc.npcSlots = 0.25f;
 			Main.npcFrameCount[npc.type] = Main.npcFrameCount[NPCID.Zombie];
 			aiType = NPCID.Zombie;
 			animationType = NPCID.Zombie;
