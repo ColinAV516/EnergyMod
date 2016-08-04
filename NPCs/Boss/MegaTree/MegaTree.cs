@@ -36,12 +36,6 @@ namespace EnergyMod.NPCs.Boss.MegaTree
 			npc.npcSlots = 5;
         }
 
-        public override void ScaleExpertStats(int numPlayers, float bossLifeScale)
-        {
-            npc.lifeMax = (int)(npc.lifeMax * 0.625f * bossLifeScale);
-            npc.damage = (int)(npc.damage * 0.6f);
-        }
-
         public override void AI()
         {
 			npc.TargetClosest(true);
@@ -53,10 +47,10 @@ namespace EnergyMod.NPCs.Boss.MegaTree
                  npc.velocity.Y = -20;
 				 timer = 0;
             }
-			
 			timer++;
 			if (timer == 3 || timer == 100 || timer == 200 || timer == 300 || timer == 400 || timer == 500)
 			{
+			npc.alpha = 0;
 			Vector2 direction = Main.player[npc.target].Center - npc.Center;
 			direction.Normalize();
 			npc.velocity.Y = direction.Y * 10f;
@@ -114,23 +108,23 @@ namespace EnergyMod.NPCs.Boss.MegaTree
 				
 			if (timer >= 1500 && Main.expertMode) //Phase 3 expert
 				{
-					int dust = Dust.NewDust(npc.position, npc.width, npc.height, 61);      
-					Main.dust[dust].scale = 1f;
 					npc.velocity.X = 0f;
 					npc.velocity.Y = 0f;
-					
-					if (timer == 1500 || timer == 1700 || timer == 1900 || timer == 2100) //Boss teleports above the player
-					{
-					int A = Main.rand.Next(-250, 250) * 3;
-					int B = Main.rand.Next(-100, 100) - 500;
-					npc.position.X = player.Center.X + A;
-					npc.position.Y = player.Center.Y + B;
-					}
+					npc.alpha = 100;
 					
 				shootTimer++;
 				
-				if (shootTimer == 20)
+				if (shootTimer == 30)
 					{
+						for (int i = 0; i < 50; ++i)
+						{
+						int dust = Dust.NewDust(npc.position, npc.width, npc.height, 61);      
+						Main.dust[dust].scale = 1.5f;
+						}
+						int A = Main.rand.Next(-250, 250) * 3;
+						int B = Main.rand.Next(-100, 100) - 500;
+						npc.position.X = player.Center.X + A;
+						npc.position.Y = player.Center.Y + B;
 						Vector2 direction = Main.player[npc.target].Center - npc.Center;
 						direction.Normalize();
 						Projectile.NewProjectile(npc.Center.X, npc.Center.Y, direction.X * 15f, direction.Y * 15f, mod.ProjectileType("ForestEnergy"), 20, 1, Main.myPlayer, 0, 0);
