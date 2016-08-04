@@ -4,11 +4,11 @@ using Terraria.ID;
 using Terraria.ModLoader;
 
 namespace EnergyMod.Items.Acessories {
-public class HeartTwig : ModItem
+public class LifeTwig : ModItem
 {
     public override void SetDefaults()
     {
-		item.name = "Heart Twig";
+		item.name = "Twig of Life";
         item.width = 24;
         item.height = 28;
         item.toolTip = "Increases health by 40";

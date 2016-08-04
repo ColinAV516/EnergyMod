@@ -8,7 +8,7 @@ public class EnemyDrops : GlobalNPC
 {
 public override void NPCLoot(NPC npc)
 {
-		if(npc.type == 2 && Main.rand.Next(2) == 0) //Demon Eye Drop
+		if(npc.displayName == "Demon Eye" && Main.rand.Next(15) == 0) //Demon Eye Drop
     {
         Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("SoaringEnergy"));
     }
@@ -18,27 +18,27 @@ public override void NPCLoot(NPC npc)
         Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("SoaringEnergy"));
     }
 	
-	if(npc.type == 3 && Main.rand.Next(1) == 0) //Zombie drop
+	if(npc.displayName == "Zombie" && Main.rand.Next(20) == 0) //Zombie drop
     {
         Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("UndeadEnergy"));
     }
 
-	if(npc.type == 21 && Main.rand.Next(2) == 0) //Skeleton drop
+	if(npc.displayName == "Skeleton" && Main.rand.Next(2) == 0) //Skeleton drop
     {
         Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("UndeadEnergy"));
     }
 	
-		if(npc.type == 161 && Main.rand.Next(7) == 0) //
+		if(npc.type == 161 && Main.rand.Next(7) == 0) //Zombie eskimo drop
     {
         Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("UndeadEnergy"));
     }
 	
-	if(npc.type == 31 && Main.rand.Next(20) == 0) //Zombie eskimo drop
+	if(npc.displayName == "Angry Bones" && Main.rand.Next(20) == 0)  //Angry Bones drop
     {
         Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("UndeadEnergy"));
     }
 	
-	if(npc.type == 32 && Main.rand.Next(3) == 0) //Angry Bones drop
+	if(npc.type == 32 && Main.rand.Next(20) == 0) //Dark Caster drop
     {
         Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("UndeadEnergy"));
     }
