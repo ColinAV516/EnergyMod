@@ -30,6 +30,8 @@ public class PowerKnife : ModItem
         item.rare = 1;
         item.useSound = 1;
         item.autoReuse = true;
+		item.consumable = true;
+		item.maxStack = 999;
     }
 
 
@@ -50,10 +52,10 @@ public class PowerKnife : ModItem
     public override void AddRecipes()
     {
         ModRecipe recipe = new ModRecipe(mod);
-        recipe.AddIngredient(null, "BossEnergy", 2);
-        recipe.AddIngredient(ItemID.Topaz, 10);
+        recipe.AddIngredient(null, "BossEnergy", 1);
+        recipe.AddIngredient(ItemID.Topaz, 3);
         recipe.AddTile(TileID.Anvils);
-        recipe.SetResult(this);
+        recipe.SetResult(this, 333);
         recipe.AddRecipe();
     }
 }}

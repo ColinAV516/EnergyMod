@@ -13,8 +13,8 @@ public class CrimtaneStabber : ModItem
         item.melee = true;
         item.width = 22;
         item.height = 24;
-        item.useTime = 13;
-        item.useAnimation = 13;
+        item.useTime = 7;
+        item.useAnimation = 7;
         item.useStyle = 3;
         item.knockBack = 1;
         item.value = 10000;
@@ -22,6 +22,7 @@ public class CrimtaneStabber : ModItem
         item.useSound = 1;
         item.autoReuse = true;
 		item.toolTip = "Stabs extremely fast";
+		item.useTurn = true;
     }
 	
 			public override void AddRecipes()

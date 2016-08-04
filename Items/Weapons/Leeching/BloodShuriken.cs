@@ -29,15 +29,17 @@ public class BloodShuriken : ModItem
         item.rare = 1;
         item.useSound = 1;
         item.autoReuse = true;
+		item.consumable = true;
+		item.maxStack = 999;
     }
 
     public override void AddRecipes()
     {
         ModRecipe recipe = new ModRecipe(mod);
-        recipe.AddIngredient(null, "UndeadEnergy", 10);
-        recipe.AddIngredient(ItemID.Bone, 20);
+        recipe.AddIngredient(null, "UndeadEnergy", 1);
+        recipe.AddIngredient(ItemID.Bone, 2);
         recipe.AddTile(TileID.Anvils);
-        recipe.SetResult(this);
+        recipe.SetResult(this, 111);
         recipe.AddRecipe();
     }
 }}

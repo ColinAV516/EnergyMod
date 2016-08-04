@@ -23,6 +23,7 @@ public class SoaringBat : ModItem
         item.useSound = 1;
 		item.toolTip = "Knocks enemies upward";
         item.autoReuse = true;
+		item.useTurn = true;
     }
 	
 	public override void OnHitNPC(Player player, NPC target, int damage, float knockBack, bool crit)
