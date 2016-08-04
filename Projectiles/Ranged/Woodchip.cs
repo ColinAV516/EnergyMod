@@ -16,7 +16,7 @@ public class Woodchip : ModProjectile
 		projectile.ranged = true;
 		projectile.friendly = true;
 		projectile.aiStyle = 1;
-        projectile.timeLeft = 56;
+        projectile.timeLeft = 90;
 	}
 
 

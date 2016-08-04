@@ -10,7 +10,7 @@ namespace EnergyMod.Items.Energy
 	{
 		public override void SetDefaults()
 		{
-			item.name = "Soaring Energy";
+			item.name = "Soaring Essence";
 			item.width = 10;
 			item.height = 10;
 			item.noMelee = true; 

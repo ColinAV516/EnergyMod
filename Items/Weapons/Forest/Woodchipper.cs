@@ -10,11 +10,11 @@ public class Woodchipper : ModItem
     public override void SetDefaults()
     {
 		item.name = "Wood Chipper";
-        item.damage = 7;
+        item.damage = 15;
         item.ranged = true;
         item.width = 22;
         item.height = 24;
-        item.useTime = 5;
+        item.useTime = 15;
         item.useAnimation = 20;
 		item.useSound = 22;
         item.useStyle = 5;
