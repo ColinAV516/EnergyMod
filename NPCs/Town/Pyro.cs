@@ -121,6 +121,8 @@ namespace EnergyMod.NPCs.Town
             shop.item[nextSlot].SetDefaults(ItemID.FlamingArrow);
             nextSlot++;
             shop.item[nextSlot].SetDefaults(mod.ItemType("FireGrenade"));
+			nextSlot++;
+			shop.item[nextSlot].SetDefaults(mod.ItemType("FirestormBottle"));
 		}
 
 		public override void TownNPCAttackStrength(ref int damage, ref float knockback)
