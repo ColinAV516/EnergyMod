@@ -6,24 +6,25 @@ using Terraria.ID;
 namespace EnergyMod.Items.Weapons.Leeching {
 public class LeechingSword : ModItem
 {
-    public override void SetDefaults()
-    {
-		item.name = "Leeching Sword";
-        item.damage = 30;
-        item.melee = true;
-        item.width = 22;
-        item.height = 24;
-        item.useTime = 18;
-        item.useAnimation = 18;
-        item.useStyle = 1;
-        item.knockBack = 3;
-        item.value = 10000;
-        item.rare = 1;
-        item.useSound = 1;
-        item.autoReuse = false;
-		item.toolTip = "Steals a small amount of health from enemies";
-		item.autoReuse = true;
-    }
+        public override void SetDefaults()
+        {
+            item.name = "Leeching Sword";
+            item.damage = 30;
+            item.melee = true;
+            item.width = 22;
+            item.height = 24;
+            item.useTime = 18;
+            item.useAnimation = 18;
+            item.useStyle = 1;
+            item.knockBack = 3;
+            item.value = 10000;
+            item.rare = 1;
+            item.useSound = 1;
+            item.autoReuse = false;
+            item.toolTip = "Steals a small amount of health from enemies";
+            item.autoReuse = true;
+            item.useTurn = true;
+        }
 	
 	public override void OnHitNPC(Player player, NPC target, int damage, float knockBack, bool crit)
 		{

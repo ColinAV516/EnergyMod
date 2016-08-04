@@ -23,7 +23,8 @@ public class LivingTreeSword : ModItem
         item.autoReuse = true;
 		item.toolTip = "Swings Slow, but hits heavily";
 		item.scale = 1.3f;
-    }
+        item.useTurn = true;
+        }
 	
 
 	

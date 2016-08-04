@@ -25,7 +25,8 @@ public class PowerBlade : ModItem
 		item.toolTip = "Shoots yellow bolts";
         item.shoot = 122;
         item.shootSpeed = 10f;
-    }
+        item.useTurn = true;
+        }
 
     public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
     {

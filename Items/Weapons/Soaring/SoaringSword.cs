@@ -21,7 +21,8 @@ public class SoaringSword : ModItem
         item.rare = 1;
         item.useSound = 1;
         item.autoReuse = true;
-    }
+        item.useTurn = true;
+        }
 	
 	
 	public override void AddRecipes()
