@@ -44,8 +44,8 @@ namespace EnergyMod.NPCs.Boss.MegaTree
             if (!player.active || player.dead)
             {
                 npc.TargetClosest(false);
-                 npc.velocity.Y = -20;
-				 timer = 0;
+                npc.velocity.Y = -20;
+				timer = 0;
             }
 			timer++;
 			
@@ -75,7 +75,7 @@ namespace EnergyMod.NPCs.Boss.MegaTree
 			{
 				if (timer == 3 || timer == 50 || timer == 100 || timer == 150 || timer == 200 || timer == 250 || timer == 300 || timer == 350 || timer == 400 || timer == 450 || timer == 500 || timer == 550)
 				{
-					npc.alpha = 0;
+					npc.alpha = 70;
 					moveSpeed = 0;
 					moveSpeedY = 0;
 					Vector2 direction = Main.player[npc.target].Center - npc.Center;
@@ -107,7 +107,14 @@ namespace EnergyMod.NPCs.Boss.MegaTree
 					moveSpeed++;
 				}
 				
-				npc.velocity.X = moveSpeed * 0.1f;
+				if (!Main.expertMode || npc.life >= 3000) //Moves faster on expert
+				{
+					npc.velocity.X = moveSpeed * 0.1f;
+				}
+				else
+				{
+					npc.velocity.X = moveSpeed * 0.15f;	
+				}
 				
 				if (npc.Center.Y >= player.Center.Y - 250f && moveSpeedY >= -35) //Flies to players Y position
 				{
@@ -119,7 +126,14 @@ namespace EnergyMod.NPCs.Boss.MegaTree
 					moveSpeedY++;
 				}
 				
-				npc.velocity.Y = moveSpeedY * 0.1f;
+				if (!Main.expertMode || npc.life >= 3000) //Moves faster on expert
+				{
+					npc.velocity.Y = moveSpeedY * 0.1f;
+				}
+				else
+				{
+					npc.velocity.Y = moveSpeedY * 0.15f;
+				}
 				
 				shootTimer++;
 				if (shootTimer == 50)
