@@ -30,7 +30,7 @@ namespace EnergyMod.NPCs.Boss.MegaTree
             npc.noGravity = true;
             npc.soundHit = 7;
             npc.soundKilled = 3;
-            music = MusicID.Boss2;
+            music = mod.GetSoundSlot(SoundType.Music, "Sounds/Music/MegaTree");
 			Main.npcFrameCount[npc.type] = 2;
 			npc.scale = 1.25f;
 			npc.npcSlots = 5;
@@ -48,22 +48,52 @@ namespace EnergyMod.NPCs.Boss.MegaTree
 				 timer = 0;
             }
 			timer++;
-			if (timer == 3 || timer == 100 || timer == 200 || timer == 300 || timer == 400 || timer == 500)
+			
+			
+			if (!Main.expertMode || npc.life >= 3000)
 			{
-			npc.alpha = 0;
-			Vector2 direction = Main.player[npc.target].Center - npc.Center;
-			direction.Normalize();
-			npc.velocity.Y = direction.Y * 10f;
-			npc.velocity.X = direction.X * 10f;
+				if (timer == 3 || timer == 100 || timer == 200 || timer == 300 || timer == 400 || timer == 500)
+				{
+					npc.alpha = 0;
+					moveSpeed = 0;
+					moveSpeedY = 0;
+					Vector2 direction = Main.player[npc.target].Center - npc.Center;
+					direction.Normalize();
+					npc.velocity.Y = direction.Y * 10f;
+					npc.velocity.X = direction.X * 10f;
+				}
+			
+				if (timer == 75 || timer == 175 || timer == 275 || timer == 375 || timer == 475)
+				{
+					Vector2 direction = Main.player[npc.target].Center - npc.Center;
+					direction.Normalize();
+					npc.velocity.Y = direction.Y * 1f;
+					npc.velocity.X = direction.X * 1f;
+				}
+			}
+			else
+			{
+				if (timer == 3 || timer == 50 || timer == 100 || timer == 150 || timer == 200 || timer == 250 || timer == 300 || timer == 350 || timer == 400 || timer == 450 || timer == 500 || timer == 550)
+				{
+					npc.alpha = 0;
+					moveSpeed = 0;
+					moveSpeedY = 0;
+					Vector2 direction = Main.player[npc.target].Center - npc.Center;
+					direction.Normalize();
+					npc.velocity.Y = direction.Y * 13f;
+					npc.velocity.X = direction.X * 13f;
+				}
+			
+				if (timer == 40 || timer == 90 || timer == 140 || timer == 190 || timer == 240 || timer == 290 || timer == 340 || timer == 390 || timer == 440 || timer == 490 || timer == 540)
+				{
+					Vector2 direction = Main.player[npc.target].Center - npc.Center;
+					direction.Normalize();
+					npc.velocity.Y = direction.Y * 1f;
+					npc.velocity.X = direction.X * 1f;
+				}
 			}
 			
-			if (timer == 75 || timer == 175 || timer == 275 || timer == 375 || timer == 475 || timer == 575)
-			{
-			Vector2 direction = Main.player[npc.target].Center - npc.Center;
-			direction.Normalize();
-			npc.velocity.Y = direction.Y * 1f;
-			npc.velocity.X = direction.X * 1f;
-			}
+			
 			
 			if (timer >= 600 && timer <= 1500)
 			{
