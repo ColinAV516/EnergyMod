@@ -21,9 +21,8 @@ namespace EnergyMod.NPCs.Night
 			npc.value = 60f;
 			npc.knockBackResist = 1f;
 			npc.aiStyle = 1;
-			Main.npcFrameCount[npc.type] = Main.npcFrameCount[NPCID.BlueSlime];
+			Main.npcFrameCount[npc.type] = 16;
 			aiType = NPCID.BlueSlime;
-			animationType = NPCID.BlueSlime;
 		}
 
 		public override float CanSpawn(NPCSpawnInfo spawnInfo)
@@ -38,14 +37,15 @@ namespace EnergyMod.NPCs.Night
 	{
 			int amountToDrop = Main.rand.Next(1,5);
 			Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.Gel, amountToDrop);
-					if(Main.rand.Next(20) == 0)
-    {
+			
+			if(Main.rand.Next(20) == 0)
+		{
         Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("DarkEnergy"));
-    }
+		}
 			if(Main.rand.Next(60) == 0)
-    {
-        Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("YellowStar"));
-    }
+		{
+			Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("YellowStar"));
+		}
 	}
 	
 		public override void ScaleExpertStats(int numPlayers, float bossLifeScale)
@@ -53,6 +53,17 @@ namespace EnergyMod.NPCs.Night
 		npc.lifeMax = (int)(npc.lifeMax * 1f);
 		npc.damage = (int)(npc.damage * 1f);
 	}
+	
+					public override void FindFrame(int frameHeight)
+		{
+			if (npc.velocity.Y == 0)
+			{
+			npc.frameCounter += 0.5f; 
+			npc.frameCounter %= Main.npcFrameCount[npc.type]; 
+			int frame = (int)npc.frameCounter; 
+			npc.frame.Y = frame * frameHeight;
+			}
+		}
 	
 	}
 }

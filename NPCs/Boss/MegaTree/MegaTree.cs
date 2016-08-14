@@ -12,6 +12,7 @@ namespace EnergyMod.NPCs.Boss.MegaTree
 		int moveSpeed = 0;
 		int moveSpeedY = 0;
 		int shootTimer = 0;
+		int shootTimerB = 0;
         public override void SetDefaults()
         {
             npc.name = "Mega Tree";
@@ -75,7 +76,7 @@ namespace EnergyMod.NPCs.Boss.MegaTree
 			{
 				if (timer == 3 || timer == 50 || timer == 100 || timer == 150 || timer == 200 || timer == 250 || timer == 300 || timer == 350 || timer == 400 || timer == 450 || timer == 500 || timer == 550)
 				{
-					npc.alpha = 70;
+					npc.alpha = 150;
 					moveSpeed = 0;
 					moveSpeedY = 0;
 					Vector2 direction = Main.player[npc.target].Center - npc.Center;
@@ -97,23 +98,23 @@ namespace EnergyMod.NPCs.Boss.MegaTree
 			
 			if (timer >= 600 && timer <= 1500)
 			{
-				if (npc.Center.X >= player.Center.X && moveSpeed >= -100) // flies to players x position
+				if (npc.Center.X >= player.Center.X && moveSpeed >= -50) // flies to players x position
 				{
 					moveSpeed--;
 				}
 					
-				if (npc.Center.X <= player.Center.X && moveSpeed <= 100)
+				if (npc.Center.X <= player.Center.X && moveSpeed <= 50)
 				{
 					moveSpeed++;
 				}
 				
 				if (!Main.expertMode || npc.life >= 3000) //Moves faster on expert
 				{
-					npc.velocity.X = moveSpeed * 0.1f;
+					npc.velocity.X = moveSpeed * 0.2f;
 				}
 				else
 				{
-					npc.velocity.X = moveSpeed * 0.15f;	
+					npc.velocity.X = moveSpeed * 0.3f;	
 				}
 				
 				if (npc.Center.Y >= player.Center.Y - 250f && moveSpeedY >= -35) //Flies to players Y position
@@ -155,10 +156,15 @@ namespace EnergyMod.NPCs.Boss.MegaTree
 					npc.velocity.X = 0f;
 					npc.velocity.Y = 0f;
 					npc.alpha = 100;
+					if (Main.expertMode && npc.life <= 3000)
+				{
+					npc.alpha = 200;
+				}
 					
-				shootTimer++;
+				shootTimerB++;
 				
-				if (shootTimer == 30)
+				
+				if (shootTimerB == 30)
 					{
 						for (int i = 0; i < 50; ++i)
 						{
@@ -172,7 +178,7 @@ namespace EnergyMod.NPCs.Boss.MegaTree
 						Vector2 direction = Main.player[npc.target].Center - npc.Center;
 						direction.Normalize();
 						Projectile.NewProjectile(npc.Center.X, npc.Center.Y, direction.X * 15f, direction.Y * 15f, mod.ProjectileType("ForestEnergy"), 20, 1, Main.myPlayer, 0, 0);
-						shootTimer = 0;
+						shootTimerB = 0;
 					}
 					
 					if (timer == 2300) // this is where timer resets on expert mode
