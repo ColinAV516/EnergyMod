@@ -32,16 +32,7 @@ namespace EnergyMod.Items.Weapons.Gloves {
 		public override bool CanUseItem(Player player)
 		{
 			
-				
-			if (player.controlRight || player.controlLeft)
-			{
-				item.shootSpeed = 15f;
-				item.useTime = 7;
-				item.useAnimation = 7;
-				item.damage = 6;
-				item.shoot = mod.ProjectileType("IronFistProj");
-			}
-			else
+			if (player.controlDown)
 			{
 				item.shootSpeed = 14f;
 				item.useTime = 50;
@@ -49,23 +40,13 @@ namespace EnergyMod.Items.Weapons.Gloves {
 				item.damage = 10;
 				item.shoot = mod.ProjectileType("IronFistProj2");
 			}
-			
-			if (player.controlDown)
+			else
 			{
-				item.shootSpeed = 18f;
-				item.useTime = 20;
-				item.useAnimation = 30;
-				item.damage = 30;
+				item.shootSpeed = 15f;
+				item.useTime = 7;
+				item.useAnimation = 7;
+				item.damage = 6;
 				item.shoot = mod.ProjectileType("IronFistProj");
-			}
-			
-			if (player.controlUp)
-			{
-				item.shootSpeed = 18f;
-				item.useTime = 120;
-				item.useAnimation = 120;
-				item.damage = 30;
-				item.shoot = mod.ProjectileType("IronFistProj2");
 			}
 			return true;
 		}
