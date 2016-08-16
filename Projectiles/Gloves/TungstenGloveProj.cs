@@ -7,12 +7,12 @@ using Terraria.ModLoader;
 
 namespace EnergyMod.Projectiles.Gloves
 {
-    public class IronFistProj : ModProjectile
+    public class TungstenGloveProj : ModProjectile
     {
         public override void SetDefaults()
         {
             projectile.melee = true;
-            projectile.name = "Iron Fist";
+            projectile.name = "Tungsten Glove";
             projectile.friendly = true;
             projectile.aiStyle = -1;
 			projectile.width = 26;

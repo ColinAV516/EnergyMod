@@ -5,11 +5,11 @@ using Terraria.ID;
 using Terraria.ModLoader;
 
 namespace EnergyMod.Items.Weapons.Gloves {
-	public class IronFist : ModItem
+	public class LeadFist : ModItem
 	{
 		public override void SetDefaults()
 		{
-			item.name = "Iron Fist";
+			item.name = "Lead Fist";
 			item.width = 24;
 			item.height = 24;
 			item.noUseGraphic = true;
@@ -25,7 +25,7 @@ namespace EnergyMod.Items.Weapons.Gloves {
 			item.useTime = 7;
 			item.useAnimation = 7;
 			item.damage = 6;
-			item.shoot = mod.ProjectileType("IronFistProj2");
+			item.shoot = mod.ProjectileType("LeadFistProj2");
 		}
 	
 
@@ -37,8 +37,8 @@ namespace EnergyMod.Items.Weapons.Gloves {
 				item.shootSpeed = 14f;
 				item.useTime = 40;
 				item.useAnimation = 40;
-				item.damage = 7;
-				item.shoot = mod.ProjectileType("IronFistProj2");
+				item.damage = 10;
+				item.shoot = mod.ProjectileType("LeadFistProj2");
 			}
 			else
 			{
@@ -46,7 +46,7 @@ namespace EnergyMod.Items.Weapons.Gloves {
 				item.useTime = 7;
 				item.useAnimation = 7;
 				item.damage = 6;
-				item.shoot = mod.ProjectileType("IronFistProj");
+				item.shoot = mod.ProjectileType("LeadFistProj");
 			}
 			return true;
 		} 

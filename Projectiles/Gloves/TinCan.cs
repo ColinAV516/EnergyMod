@@ -5,16 +5,16 @@ using Terraria.ModLoader;
 using Terraria.ID;
 
 namespace EnergyMod.Projectiles.Gloves {
-public class IronSpike : ModProjectile
+public class TinCan : ModProjectile
 {
 	public override void SetDefaults()
 	{
-		projectile.name = "Iron Spike";
-		projectile.width = 14;
-		projectile.height = 14;
+		projectile.name = "Tin Can";
+		projectile.width = 8;
+		projectile.height = 16;
 		projectile.aiStyle = 14;
-		projectile.penetrate = 1;
-        projectile.timeLeft = 200;
+		projectile.penetrate = 2;
+        projectile.timeLeft = 500;
 		projectile.melee = true;
 		projectile.friendly = true;
 	}

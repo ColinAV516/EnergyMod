@@ -5,11 +5,11 @@ using Terraria.ID;
 using Terraria.ModLoader;
 
 namespace EnergyMod.Items.Weapons.Gloves {
-	public class IronFist : ModItem
+	public class PlatinumGauntlet : ModItem
 	{
 		public override void SetDefaults()
 		{
-			item.name = "Iron Fist";
+			item.name = "Platinum Gauntlet";
 			item.width = 24;
 			item.height = 24;
 			item.noUseGraphic = true;
@@ -24,8 +24,8 @@ namespace EnergyMod.Items.Weapons.Gloves {
 			item.useStyle = 5;
 			item.useTime = 7;
 			item.useAnimation = 7;
-			item.damage = 6;
-			item.shoot = mod.ProjectileType("IronFistProj2");
+			item.damage = 10;
+			item.shoot = mod.ProjectileType("PlatinumGauntletProj");
 		}
 	
 
@@ -34,19 +34,19 @@ namespace EnergyMod.Items.Weapons.Gloves {
 			
 			if (player.controlDown)
 			{
-				item.shootSpeed = 14f;
+				item.shootSpeed = 8f;
 				item.useTime = 40;
 				item.useAnimation = 40;
-				item.damage = 7;
-				item.shoot = mod.ProjectileType("IronFistProj2");
+				item.damage = 12;
+				item.shoot = mod.ProjectileType("PlatinumGauntletProj2");
 			}
 			else
 			{
 				item.shootSpeed = 15f;
 				item.useTime = 7;
 				item.useAnimation = 7;
-				item.damage = 6;
-				item.shoot = mod.ProjectileType("IronFistProj");
+				item.damage = 10;
+				item.shoot = mod.ProjectileType("PlatinumGauntletProj");
 			}
 			return true;
 		} 

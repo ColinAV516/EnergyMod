@@ -7,23 +7,19 @@ using Terraria.ModLoader;
 
 namespace EnergyMod.Projectiles.Gloves
 {
-    public class IronFistProj : ModProjectile
+    public class GoldGauntletProj2 : ModProjectile
     {
         public override void SetDefaults()
         {
             projectile.melee = true;
-            projectile.name = "Iron Fist";
+            projectile.name = "Gold Gauntlet";
             projectile.friendly = true;
-            projectile.aiStyle = -1;
+            projectile.aiStyle = 3;
 			projectile.width = 26;
 			projectile.height = 26;
-			projectile.penetrate = 1;
-			projectile.timeLeft = 6;
+			projectile.penetrate = -1;
+			projectile.timeLeft = 2000;
         }
-        		public override void AI()
-		{
-			projectile.rotation = (float)Math.Atan2((double)projectile.velocity.Y, (double)projectile.velocity.X) + -5.5f;
-		}
 	
     }
 }

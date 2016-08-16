@@ -11,18 +11,18 @@ namespace EnergyMod.Projectiles.Gloves
     {
         public override void SetDefaults()
         {
-            projectile.magic = true;
+            projectile.melee = true;
             projectile.name = "Iron Fist";
             projectile.friendly = true;
-            projectile.aiStyle = 27;
-			projectile.width = 16;
-			projectile.height = 16;
+            projectile.aiStyle = -1;
+			projectile.width = 26;
+			projectile.height = 26;
 			projectile.penetrate = -1;
-			projectile.timeLeft = 20;
+			projectile.timeLeft = 12;
         }
         		public override void AI()
 		{
-			projectile.alpha = 0;
+			projectile.rotation = (float)Math.Atan2((double)projectile.velocity.Y, (double)projectile.velocity.X) + -5.5f;
 		}
 		
 		public override void Kill(int timeLeft)

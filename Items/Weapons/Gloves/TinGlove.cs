@@ -5,11 +5,11 @@ using Terraria.ID;
 using Terraria.ModLoader;
 
 namespace EnergyMod.Items.Weapons.Gloves {
-	public class IronFist : ModItem
+	public class TinGlove : ModItem
 	{
 		public override void SetDefaults()
 		{
-			item.name = "Iron Fist";
+			item.name = "Tin Glove";
 			item.width = 24;
 			item.height = 24;
 			item.noUseGraphic = true;
@@ -24,8 +24,8 @@ namespace EnergyMod.Items.Weapons.Gloves {
 			item.useStyle = 5;
 			item.useTime = 7;
 			item.useAnimation = 7;
-			item.damage = 6;
-			item.shoot = mod.ProjectileType("IronFistProj2");
+			item.damage = 5;
+			item.shoot = mod.ProjectileType("TinGloveProj2");
 		}
 	
 
@@ -37,17 +37,17 @@ namespace EnergyMod.Items.Weapons.Gloves {
 				item.shootSpeed = 14f;
 				item.useTime = 40;
 				item.useAnimation = 40;
-				item.damage = 7;
-				item.shoot = mod.ProjectileType("IronFistProj2");
+				item.damage = 10;
+				item.shoot = mod.ProjectileType("TinGloveProj2");
 			}
 			else
 			{
 				item.shootSpeed = 15f;
 				item.useTime = 7;
 				item.useAnimation = 7;
-				item.damage = 6;
-				item.shoot = mod.ProjectileType("IronFistProj");
+				item.damage = 5;
+				item.shoot = mod.ProjectileType("TinGloveProj");
 			}
 			return true;
-		} 
+		}
 }}
