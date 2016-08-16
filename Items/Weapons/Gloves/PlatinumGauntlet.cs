@@ -22,9 +22,9 @@ namespace EnergyMod.Items.Weapons.Gloves {
 			item.rare = 3;
 			item.autoReuse = true;
 			item.useStyle = 5;
-			item.useTime = 7;
-			item.useAnimation = 7;
-			item.damage = 10;
+			item.useTime = 19;
+			item.useAnimation = 19;
+			item.damage = 17;
 			item.shoot = mod.ProjectileType("PlatinumGauntletProj");
 		}
 	
@@ -43,11 +43,20 @@ namespace EnergyMod.Items.Weapons.Gloves {
 			else
 			{
 				item.shootSpeed = 15f;
-				item.useTime = 7;
-				item.useAnimation = 7;
-				item.damage = 10;
+				item.useTime = 19;
+				item.useAnimation = 19;
+				item.damage = 17;
 				item.shoot = mod.ProjectileType("PlatinumGauntletProj");
 			}
 			return true;
 		} 
+		
+			public override void AddRecipes()
+        {
+            ModRecipe recipe = new ModRecipe(mod);
+            recipe.AddIngredient(ItemID.PlatinumBar, 12);
+            recipe.AddTile(TileID.Anvils);
+            recipe.SetResult(this, 1);
+            recipe.AddRecipe();
+        }
 }}

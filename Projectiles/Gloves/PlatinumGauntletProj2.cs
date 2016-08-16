@@ -9,7 +9,7 @@ namespace EnergyMod.Projectiles.Gloves
 {
     public class PlatinumGauntletProj2 : ModProjectile
     {
-		int bounces = 3;
+		int bounces = 2;
         public override void SetDefaults()
         {
             projectile.melee = true;

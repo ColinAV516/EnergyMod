@@ -22,9 +22,9 @@ namespace EnergyMod.Items.Weapons.Gloves {
 			item.rare = 3;
 			item.autoReuse = true;
 			item.useStyle = 5;
-			item.useTime = 7;
-			item.useAnimation = 7;
-			item.damage = 5;
+			item.useTime = 10;
+			item.useAnimation = 10;
+			item.damage = 6;
 			item.shoot = mod.ProjectileType("TinGloveProj2");
 		}
 	
@@ -43,11 +43,19 @@ namespace EnergyMod.Items.Weapons.Gloves {
 			else
 			{
 				item.shootSpeed = 15f;
-				item.useTime = 7;
-				item.useAnimation = 7;
-				item.damage = 5;
+				item.useTime = 10;
+				item.useAnimation = 10;
+				item.damage = 6;
 				item.shoot = mod.ProjectileType("TinGloveProj");
 			}
 			return true;
 		}
+						        public override void AddRecipes()
+        {
+            ModRecipe recipe = new ModRecipe(mod);
+            recipe.AddIngredient(ItemID.TinBar, 12);
+            recipe.AddTile(TileID.Anvils);
+            recipe.SetResult(this, 1);
+            recipe.AddRecipe();
+        }
 }}
