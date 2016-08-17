@@ -26,7 +26,8 @@ namespace EnergyMod.Items.Weapons.Gloves {
 			item.useAnimation = 10;
 			item.damage = 6;
 			item.shoot = mod.ProjectileType("TinGloveProj2");
-		}
+            item.toolTip = "Press S and M1 for special move!";
+        }
 	
 
 		public override bool CanUseItem(Player player)

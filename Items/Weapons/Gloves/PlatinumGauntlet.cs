@@ -26,7 +26,9 @@ namespace EnergyMod.Items.Weapons.Gloves {
 			item.useAnimation = 19;
 			item.damage = 17;
 			item.shoot = mod.ProjectileType("PlatinumGauntletProj");
-		}
+            item.toolTip = "Press S and M1 for special move!";
+
+        }
 	
 
 		public override bool CanUseItem(Player player)

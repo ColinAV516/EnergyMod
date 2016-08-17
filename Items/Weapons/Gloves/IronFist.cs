@@ -26,7 +26,9 @@ namespace EnergyMod.Items.Weapons.Gloves {
 			item.useAnimation = 15;
 			item.damage = 9;
 			item.shoot = mod.ProjectileType("IronFistProj2");
-		}
+            item.toolTip = "Press S and M1 for special move!";
+
+        }
 	
 
 		public override bool CanUseItem(Player player)

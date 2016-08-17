@@ -26,7 +26,8 @@ namespace EnergyMod.Items.Weapons.Gloves {
 			item.useAnimation = 15;
 			item.damage = 13;
 			item.shoot = mod.ProjectileType("TungstenGloveProj2");
-		}
+            item.toolTip = "Press S and M1 for special move!";
+        }
 	
 
 		public override bool CanUseItem(Player player)
